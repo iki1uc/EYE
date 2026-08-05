@@ -2,90 +2,105 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>BEN • UNI‑RESPO Engine</title>
+<title>EYE · Multi-Master / Multi-Slave · INDEX</title>
 
 <style>
-body {
-  background:#000;
-  color:#eee;
-  font-family:Consolas, monospace;
-  padding:20px;
-}
-h1,h2 {
-  color:#00e0ff;
-  text-shadow:0 0 10px #00e0ff;
-}
-.block {
-  border:1px solid #00e0ff;
-  padding:15px;
-  margin:20px 0;
-  border-radius:8px;
-  background:#111;
-}
-.matrix {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-.axis8 {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-}
-.cell {
-  padding:10px;
-  background:#222;
-  border:1px solid #333;
-  text-align:center;
-  border-radius:6px;
-}
-.scanbox {
-  background:#222;
-  border:1px solid #444;
-  padding:10px;
-  margin-top:10px;
-}
-.verify {
-  background:#1a1a1a;
-  border:1px solid #5500ff;
-  padding:10px;
-  margin-top:10px;
-}
+body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:20px; }
+h1, h2 { color:#6cf; }
+a { color:#6cf; display:block; margin:6px 0; font-size:18px; }
+hr { border:1px solid #333; margin:25px 0; }
+pre { background:#111; padding:12px; border:1px solid #333; }
 </style>
 </head>
 
 <body>
 
-<h1>BEN‑RESPO • UNI‑RESPO • WELT‑RESPO</h1>
+<h1>EYE · Multi-Master / Multi-Slave</h1>
+<p>Konsequenz von AGE + PAIRING + NC.</p>
 
-<!-- FUNKTION.matrix -->
-<div class="block">
-  <h2>FUNKTION.matrix</h2>
-  <p>Achsen: TMP / TRANS / WARB<br>
-     Felder: WLOCH / KANAL / GATE</p>
+<hr>
 
-  <div class="matrix">
-    <div class="cell">TMP.WLOCH</div>
-    <div class="cell">TMP.KANAL</div>
-    <div class="cell">TMP.GATE</div>
+<h2>EYE‑Analyse</h2>
+<pre id="eye-out">Lade…</pre>
 
-    <div class="cell">TRANS.WLOCH</div>
-    <div class="cell">TRANS.KANAL</div>
-    <div class="cell">TRANS.GATE</div>
+<script type="module">
+import { AGE } from "./AGE.js";
+import { NC_CHECK } from "./NCCheck.js";
+import { EYE } from "./COeye.js";
 
-    <div class="cell">WARB.WLOCH</div>
-    <div class="cell">WARB.KANAL</div>
-    <div class="cell">WARB.GATE</div>
-  </div>
-</div>
+// Beispiel‑Module (du kannst später echte RESPO‑Module einsetzen)
+const modules = [
+    { core: { name: "Modul A", axis: "X", motion: "M1", cap: 5 }, sync: { nc: { raw:1, evo:1, tokens:1 } } },
+    { core: { name: "Modul B", axis: "X", motion: "M1", cap: 6 }, sync: { nc: { raw:1, evo:1, tokens:1 } } },
+    { core: { name: "Modul C", axis: "Y", motion: "M2", cap: 3 }, sync: { nc: { raw:1, evo:0, tokens:1 } } }
+];
 
-<!-- BEN‑Axiom‑System -->
-<div class="block">
-  <h2>BEN‑Axiom‑System</h2>
-  <div class="matrix">
-    <div class="cell">BEN</div>
-    <div class="cell">BEN.tmp</div>
-    <div class="cell">BEN.trans</div>
+// EYE‑Analyse ausführen
+const evalData = EYE(modules);
 
-    <div class="cell">BEN.warb</div>
-    <div class="cell">BEN‑NC3×3</div>
+// Ausgabe
+document.getElementById("eye-out").innerHTML =
+    JSON.stringify(evalData, null, 2);
+</script>
+
+<hr>
+
+<h2>Struktur‑Module</h2>
+<a href="./index.html">index.html</a>
+<a href="./README.md">README.md</a>
+
+<hr>
+
+<h2>EYE‑Core Dateien</h2>
+<a href="./COeye.js">COeye.js</a>
+<a href="./AGE.js">AGE.js</a>
+<a href="./NCCheck.js">NCCheck.js</a>
+
+<hr>
+
+<h2>CSV‑Module</h2>
+<a href="./achse-bedeutung-8.csv">achse-bedeutung-8.csv</a>
+<a href="./achse-bedeutung-10.csv">achse-bedeutung-10.csv</a>
+<a href="./ebene-bedeutung-6.csv">ebene-bedeutung-6.csv</a>
+<a href="./ebene-bedeutung-6 (1).csv">ebene-bedeutung-6 (1).csv</a>
+<a href="./ebene-gruppe-3.csv">ebene-gruppe-3.csv</a>
+<a href="./geo-form-kompatibel-mit-3.csv">geo-form-kompatibel-mit-3.csv</a>
+<a href="./raum-symbol-7.csv">raum-symbol-7.csv</a>
+<a href="./punkt-alter-code-9.csv">punkt-alter-code-9.csv</a>
+<a href="./modul-kern-3.csv">modul-kern-3.csv</a>
+<a href="./modul-funktion-3.csv">modul-funktion-3.csv</a>
+<a href="./modul-score-7.csv">modul-score-7.csv</a>
+<a href="./modul-marktrolle-12.csv">modul-marktrolle-12.csv</a>
+<a href="./tp-marktrolle-5.csv">tp-marktrolle-5.csv</a>
+<a href="./nr-name-6.csv">nr-name-6.csv</a>
+<a href="./station-buchstabe-10.csv">station-buchstabe-10.csv</a>
+<a href="./station-buchstabe-10 (1).csv">station-buchstabe-10 (1).csv</a>
+<a href="./neue-station-buchstabe-3.csv">neue-station-buchstabe-3.csv</a>
+<a href="./schicht-aufgabe-4.csv">schicht-aufgabe-4.csv</a>
+<a href="./schicht-aufgabe-6.csv">schicht-aufgabe-6.csv</a>
+<a href="./schnittstelle-bandbreite-6.csv">schnittstelle-bandbreite-6.csv</a>
+<a href="./datei-inhalt-10.csv">datei-inhalt-10.csv</a>
+<a href="./datei-inhalt-12.csv">datei-inhalt-12.csv</a>
+<a href="./score-bedeutung-3.csv">score-bedeutung-3.csv</a>
+
+<hr>
+
+<h2>Status</h2>
+<p>Diese INDEX.html nutzt:</p>
+<ul>
+<li>COeye.js (EYE‑CORE)</li>
+<li>AGE.js</li>
+<li>NCCheck.js</li>
+<li>ALLE CSV‑Module</li>
+<li>ALLE Bedeutungstabellen</li>
+<li>ALLE Stationen</li>
+<li>ALLE Ebenen</li>
+<li>ALLE Achsen</li>
+<li>ALLE Schnittstellen</li>
+<li>ALLE Datei‑Inhalte</li>
+</ul>
+
+<p>Keine neuen Dateien. Nur Integration.</p>
+
+</body>
+</html>
