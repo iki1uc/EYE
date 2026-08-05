@@ -1,0 +1,11 @@
+﻿Station,Buchstabe,Bedeutung
+HY,H,Hauptachse
+PE,P,90°‑Rotation
+PER,R,180°‑Rotation
+WARB,W,Warp‑Achse
+KANAL,K,Kanal‑Achse
+TRANS,T,Transform‑Achse
+wLOCH,L,Optakorrektion
+XI,X,GPU‑Achse
+IZ,Z,Z‑Tiefe
+XIZ,XZ,GPU‑Tiefe‑Hybrid

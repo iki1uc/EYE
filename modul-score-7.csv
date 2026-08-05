@@ -1,0 +1,8 @@
+﻿Modul,Score,Zustand
+AX,0–100,Achsen stabil?
+MX,0–100,Vektoren stabil?
+NC,0–100,Kern stabil?
+UX,0–100,Interface stabil?
+TXT,0–100,Text‑Kern stabil?
+ROOM,0–100,Räume stabil?
+ECO,0–100,Markt‑Instanz stabil?

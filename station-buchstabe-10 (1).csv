@@ -1,0 +1,11 @@
+﻿Station,Buchstabe,Bedeutung,Ableitung
+HY,H,Hauptachse,F.vector
+PE,P,90°‑Rotation,ROT90(F)
+PER,R,180°‑Rotation,ROT180(F)
+WARB,W,Warp‑Achse,WARP(F)
+KANAL,K,Kanal‑Achse,KANAL(F)
+TRANS,T,Transform‑Achse,TRANS(F)
+wLOCH,L,Optakorrektion,F ÷ wLOCH
+XI,X,GPU‑Achse,GPU(F)
+IZ,Z,Z‑Tiefe,DEPTH(F)
+XIZ,XZ,GPU‑Tiefe‑Hybrid,GPU(DEPTH(F))
