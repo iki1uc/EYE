@@ -1,0 +1,9 @@
+VECTOR.modules.push("EYE");
+
+EYE.vector = function(state) {
+  return {
+    seen: state,
+    mode: "neutral",
+    bind: false
+  };
+};
